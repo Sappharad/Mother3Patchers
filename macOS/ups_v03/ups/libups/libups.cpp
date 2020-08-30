@@ -4,9 +4,9 @@ using namespace nall;
 bool UPS::create(const char *x, const char *y, const char *z) {
   error = "";
 
-  if(!fx.open(x, file::mode_read))  { error = "Impossible d’accéder au fichier d’entrée."; close(); return false; }
-  if(!fy.open(y, file::mode_read))  { error = "Une erreur est survenue lors de l’application du patch."; close(); return false; }
-  if(!fz.open(z, file::mode_write)) { error = "Le fichier de patch n’a pas été trouvé. Il devrait être inclus dans le dossier d’installation.";    close(); return false; }
+    if(!fx.open(x, file::mode_read))  { error = "Original file cannot be opened."; close(); return false; }
+    if(!fy.open(y, file::mode_read))  { error = "Modified file cannot be opened."; close(); return false; }
+    if(!fz.open(z, file::mode_write)) { error = "Patch file cannot be opened.";    close(); return false; }
   crcx = crcy = crcz = ~0;
 
   //header
@@ -63,12 +63,12 @@ bool UPS::create(const char *x, const char *y, const char *z) {
 bool UPS::apply(const char *x, const char *y, const char *z) {
   error = "";
 
-  if(!fx.open(x, file::mode_read))      { error = "Impossible d’accéder au fichier d’entrée.";  close(); return false; }
-  if(!fy.open(y, file::mode_writeread)) { error = "Une erreur est survenue lors de l’application du patch."; close(); return false; }
-  if(!fz.open(z, file::mode_read))      { error = "Le fichier de patch n’a pas été trouvé. Il devrait être inclus dans le dossier d’installation.";  close(); return false; }
+    if(!fx.open(x, file::mode_read))      { error = "Input file cannot be opened.";  close(); return false; }
+    if(!fy.open(y, file::mode_writeread)) { error = "Output file cannot be opened."; close(); return false; }
+    if(!fz.open(z, file::mode_read))      { error = "Patch file cannot be opened.";  close(); return false; }
 
   uint64_t sizez = fz.size();
-  if(sizez < 20) { error = "Le fichier de patch n’a pas été trouvé. Il devrait être inclus dans le dossier d’installation."; close(); return false; }
+  if(sizez < 20) { error = "Patch file invalid (file size too small.)"; close(); return false; }
   fz.seek(sizez - 12);
   uint32_t rcrcx = fz.readl(4);
   uint32_t rcrcy = fz.readl(4);
@@ -77,13 +77,13 @@ bool UPS::apply(const char *x, const char *y, const char *z) {
   fz.seek(0);
   crcz = ~0;
   for(uint64_t i = 0; i < sizez - 4; i++) zread();
-  if(~crcz != rcrcz) { error = "Le fichier d’entrée est incorrect.";  close(); return false; }
+  if(~crcz != rcrcz) { error = "Patch CRC32 invalid.";  close(); return false; }
   fz.seek(0);
 
-  if(zread() != 'U') { error = "Une erreur est survenue lors de l’application du patch"; close(); return false; }
-  if(zread() != 'P') { error = "Une erreur est survenue lors de l’application du patch"; close(); return false; }
-  if(zread() != 'S') { error = "Une erreur est survenue lors de l’application du patch"; close(); return false; }
-  if(zread() != '1') { error = "Une erreur est survenue lors de l’application du patch"; close(); return false; }
+  if(zread() != 'U') { error = "Patch header invalid."; close(); return false; }
+  if(zread() != 'P') { error = "Patch header invalid."; close(); return false; }
+  if(zread() != 'S') { error = "Patch header invalid."; close(); return false; }
+  if(zread() != '1') { error = "Patch header invalid."; close(); return false; }
 
   uint64_t sizex = decptr();
   uint64_t sizey = decptr();
@@ -98,10 +98,10 @@ bool UPS::apply(const char *x, const char *y, const char *z) {
     //x^z->y
   } else if(fx.size() == sizey && ~crcx == rcrcy) {
     //y^z->x
-    swap(sizex, sizey);
-    swap(rcrcx, rcrcy);
+      swap(sizex, sizey);
+      swap(rcrcx, rcrcy);
   } else {
-    error = "Le fichier d’entrée est incorrect.";
+    error = "Input file (the file you're applying the patch to) size and/or CRC32 invalid. This means you picked the wrong file.";
     close();
     return false;
   }
@@ -132,7 +132,7 @@ bool UPS::apply(const char *x, const char *y, const char *z) {
   fy.seek(0);
   crcy = ~0;
   while(!fy.end()) yread();
-  if(~crcy != rcrcy) { error = "Une erreur est survenue lors de l’application du patch."; close(); return false; }
+  if(~crcy != rcrcy) { error = "Output CRC32 invalid."; close(); return false; }
 
   close();
   return true;
