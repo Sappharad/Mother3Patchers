@@ -1,0 +1,11 @@
+Windows And Linux/*/Mother3Patcher/obj
+Windows And Linux/*/Mother3Patcher/bin
+*.suo
+macOS/ups_v03/ups/MacUPS/MacUPS.xcodeproj/project.xcworkspace/xcuserdata
+macOS/ups_v03/ups/MacUPS/MacUPS.xcodeproj/xcuserdata
+macOS/ups_v03/ups/MacUPS/build
+xcuserdata
+sappharad.*
+macOS/ups_v03/ups/Mother3UPS/build
+macOS/ups_v03/ups/Mother3UPS_French/build
+macOS/ups_v03/ups/Mother3UPS_Portugese/build

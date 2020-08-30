@@ -1,2 +1,7 @@
-# Mother3Patchers
-Source code for the latest versions of most of the patching apps included with the Mother 3 fan translation
+# Mother 3 UPS Patchers
+This repository includes the source code for the latest versions of most of the patching apps included with the Mother 3 fan translation. Please see the readme file under each platform's folder for more details on that specific code.
+
+The original Windows and Linux patchers were written by byuu in C++, based on the UPS patching standard that he created. The source code to those patchers was lost, and I re-created replicas of those patchers in C# which were used for the Portugese and French translations of the game.
+
+I created the original Mac OS X patcher based on byuu's UPS version 0.3 code, which was later translated for the Portugese and French releases. The original release was compatible with PowerPC and Intel Macs running MacOS X 10.4 and later, but the non-English builds dropped support for PowerPC Macs as development tools were no longer readily available to support that hardware anymore. Recent builds are still based on the original UPS code which has been obsolete for many years. The macOS patching tool MultiPatch was originally created from this same codebase, but it no longer contains any of the original patching logic as it was moved to a newer UPS implementation. Recent builds of the macOS Mother 3 patcher were updated to target system 10.9 and later. This was required for getting the builds validated by Apple's notary service and to support Apple Silicon (ARM) based Macs.
+

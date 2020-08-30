@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'MacUPS' target in the 'MacUPS' project.
+//
+
+#include <Carbon/Carbon.h>
+#include "HIFramework.h"
+#include "TApplication.h"
+#include "TWindow.h"
