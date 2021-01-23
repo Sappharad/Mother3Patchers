@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -505,7 +505,7 @@
             </items>
             <point key="canvasLocation" x="139" y="154"/>
         </menu>
-        <window title="Mother 3 Translation Patcher" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+        <window title="Mother 3 Translation Patcher" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="512" width="450" height="238"/>
@@ -514,12 +514,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="450" height="238"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="450">
+                    <imageView id="450">
                         <rect key="frame" x="20" y="113" width="400" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="patcher_logo" id="451"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="452">
+                    <textField verticalHuggingPriority="750" id="452">
                         <rect key="frame" x="17" y="88" width="435" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="XTd-9f-h9X"/>
                         </constraints>
@@ -529,8 +531,9 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="454">
+                    <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" id="454">
                         <rect key="frame" x="20" y="63" width="324" height="22"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="455">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -784,8 +787,9 @@
                             </allowedInputSourceLocales>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="456">
+                    <button verticalHuggingPriority="750" id="456">
                         <rect key="frame" x="346" y="57" width="90" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Browse..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="457">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -794,8 +798,9 @@
                             <action selector="btnBrowse:" target="466" id="475"/>
                         </connections>
                     </button>
-                    <button horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="458">
+                    <button horizontalHuggingPriority="249" id="458">
                         <rect key="frame" x="18" y="39" width="156" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="h1q-Kr-keM"/>
                         </constraints>
@@ -804,12 +809,13 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="464">
-                        <rect key="frame" x="299" y="13" width="132" height="38"/>
+                    <button id="464">
+                        <rect key="frame" x="301" y="15" width="128" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="uTD-qR-lk5"/>
                         </constraints>
-                        <buttonCell key="cell" type="squareTextured" title="Apply Patch" bezelStyle="texturedSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="465">
+                        <buttonCell key="cell" type="smallSquare" title="Apply Patch" bezelStyle="smallSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="465">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

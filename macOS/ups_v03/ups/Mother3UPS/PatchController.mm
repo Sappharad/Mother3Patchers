@@ -5,12 +5,10 @@
 
 - (IBAction)btnApply:(id)sender {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSBundle *appResources = [NSBundle mainBundle]; //Get access to files inside the program
+	//NSBundle *appResources = [NSBundle mainBundle]; //Get access to files inside the program
 	NSString *romPath = [txtRomPath stringValue];
 	NSString *backupPath = [romPath stringByAppendingString:@".bak"];
-	NSString *patchPath = [appResources bundlePath];
-	NSRange lastSlash = [patchPath rangeOfString:@"/" options:NSBackwardsSearch];
-	patchPath = [patchPath substringToIndex:lastSlash.location];
+    NSString* patchPath = [NSBundle.mainBundle.bundlePath stringByDeletingLastPathComponent];
 	patchPath = [patchPath stringByAppendingString:@"/mother3.ups"];
 	UPS ups; //UPS Patcher
 	
