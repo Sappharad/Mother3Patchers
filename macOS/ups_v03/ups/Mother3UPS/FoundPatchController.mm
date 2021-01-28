@@ -1,11 +1,13 @@
-#import "PatchController.h"
+#import "FoundPatchController.h"
 #include "libups.hpp"
 
-@implementation PatchController
+@implementation FoundPatchController
+- (void)showDialog{
+    [wndPatcher makeKeyAndOrderFront:nil];
+}
 
 - (IBAction)btnApply:(id)sender {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-	//NSBundle *appResources = [NSBundle mainBundle]; //Get access to files inside the program
 	NSString *romPath = [txtRomPath stringValue];
 	NSString *backupPath = [romPath stringByAppendingString:@".bak"];
     NSString* patchPath = [NSBundle.mainBundle.bundlePath stringByDeletingLastPathComponent];

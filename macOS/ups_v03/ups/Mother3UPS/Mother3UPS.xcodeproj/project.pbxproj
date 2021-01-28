@@ -13,10 +13,11 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		9E0351B10E9D83390043AC3E /* libups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E0351AE0E9D83390043AC3E /* libups.cpp */; };
 		9E0351B20E9D83390043AC3E /* ups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E0351B00E9D83390043AC3E /* ups.cpp */; };
-		9E0351C30E9D8B570043AC3E /* PatchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E0351C10E9D8B570043AC3E /* PatchController.mm */; };
+		9E0351C30E9D8B570043AC3E /* FoundPatchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E0351C10E9D8B570043AC3E /* FoundPatchController.mm */; };
 		9E2341CA0EA1A00700890B6B /* patcher_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2341C90EA1A00700890B6B /* patcher_logo.png */; };
 		9E23427A0EA1C85500890B6B /* lucas.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9E2342790EA1C85500890B6B /* lucas.icns */; };
 		9E75E6AA256C520D003D0DE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E6A9256C520D003D0DE9 /* AppDelegate.m */; };
+		9ED3851125C2661D003064CD /* LostPatchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3851025C2661D003064CD /* LostPatchController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,14 +32,16 @@
 		9E0351AE0E9D83390043AC3E /* libups.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libups.cpp; sourceTree = "<group>"; };
 		9E0351AF0E9D83390043AC3E /* libups.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = libups.hpp; sourceTree = "<group>"; };
 		9E0351B00E9D83390043AC3E /* ups.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ups.cpp; path = ../ups.cpp; sourceTree = SOURCE_ROOT; };
-		9E0351C10E9D8B570043AC3E /* PatchController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PatchController.mm; sourceTree = "<group>"; };
-		9E0351C20E9D8B570043AC3E /* PatchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatchController.h; sourceTree = "<group>"; };
+		9E0351C10E9D8B570043AC3E /* FoundPatchController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FoundPatchController.mm; sourceTree = "<group>"; };
+		9E0351C20E9D8B570043AC3E /* FoundPatchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundPatchController.h; sourceTree = "<group>"; };
 		9E2341C90EA1A00700890B6B /* patcher_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patcher_logo.png; sourceTree = "<group>"; };
 		9E2342790EA1C85500890B6B /* lucas.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = lucas.icns; sourceTree = "<group>"; };
 		9E75E6A2256C4DF7003D0DE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E75E6A3256C4DF7003D0DE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9E75E6A8256C520D003D0DE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9E75E6A9256C520D003D0DE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9ED3850F25C2661D003064CD /* LostPatchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostPatchController.h; sourceTree = "<group>"; };
+		9ED3851025C2661D003064CD /* LostPatchController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LostPatchController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +59,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9E0351C20E9D8B570043AC3E /* PatchController.h */,
-				9E0351C10E9D8B570043AC3E /* PatchController.mm */,
+				9ED3850F25C2661D003064CD /* LostPatchController.h */,
+				9ED3851025C2661D003064CD /* LostPatchController.mm */,
+				9E0351C20E9D8B570043AC3E /* FoundPatchController.h */,
+				9E0351C10E9D8B570043AC3E /* FoundPatchController.mm */,
 				9E75E6A8256C520D003D0DE9 /* AppDelegate.h */,
 				9E75E6A9256C520D003D0DE9 /* AppDelegate.m */,
 			);
@@ -212,7 +217,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				9E0351B10E9D83390043AC3E /* libups.cpp in Sources */,
 				9E0351B20E9D83390043AC3E /* ups.cpp in Sources */,
-				9E0351C30E9D8B570043AC3E /* PatchController.mm in Sources */,
+				9E0351C30E9D8B570043AC3E /* FoundPatchController.mm in Sources */,
+				9ED3851125C2661D003064CD /* LostPatchController.mm in Sources */,
 				9E75E6AA256C520D003D0DE9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
